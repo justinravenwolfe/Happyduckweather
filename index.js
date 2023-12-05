@@ -5,7 +5,7 @@ const key="54618fe1a12009457244e8835544de58";
 
 // The city you want the forecast for
 var city_in = document.getElementById("search");
-var city = search.value; 
+var city = city_in.value; 
 
 // The URL to the 5 day / 3 hour forecast API
 
