@@ -11,4 +11,11 @@
  flex-direction: column !important;
  margin: 1% !important;
 }
-
+.weather_card{
+  display: inline-block !important; 
+  text-wrap: wrap;
+  margin: 1%; 
+  background-color: aquamarine; 
+  color: black; 
+  text-align: center; 
+}
