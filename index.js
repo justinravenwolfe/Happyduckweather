@@ -1,6 +1,6 @@
 //Should not be editable/protects it
 const key="54618fe1a12009457244e8835544de58";
-var images = ["https://www.freeiconspng.com/thumbs/sun-icon/sun-icon-4.jpg","https://www.freepnglogos.com/uploads/cloud-clipart/clipart-clouds-picture-images-0.png","https://banner2.cleanpng.com/20180322/brq/kisspng-rain-cloud-storm-weather-clip-art-rain-5ab47b2dee2374.9241528315217774539754.jpg"]; 
+var images = ["Images/sunny.png", "Images/clouds.png", "Images/rain.png"]; 
 var type  = ["sun", "cloud", "rain"]; 
 
 // Your OpenWeather API Key
@@ -76,19 +76,20 @@ function getWeatherForecast() {
         desc.id = "weather_desc";
         desc.textContent = weather; 
         var weather_img = document.createElement('img');
-        var desc_opt = weather;
+        weather_img.id = 'weather_img'; 
+        var desc_opt = weather.trim();
         if(desc_opt== "Clear"){
-          weather_img.url = images[0];
-        } else if(desc_opt == "Cloudy"){
-          weather_img.url = images[1];
-        }else{
-          weather_img.url = images[2];
+          weather_img.src = images[0];
+        } else if(desc_opt == "Clouds"){
+          weather_img.src = images[1];
+        }else if(desc_opt == "Rain"){
+          weather_img.src = images[2];
         }
         //Append these element onto the main div
         card_container.appendChild(calendar);
         card_container.appendChild(degrees);
         card_container.appendChild(desc); 
-        card_container.append(weather_img); 
+        card_container.appendChild(weather_img); 
         //Actually puts it on the webpage
         weather_cards.appendChild(card_container); 
       }
