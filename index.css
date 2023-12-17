@@ -11,7 +11,7 @@
  flex-direction: column !important;
  margin: 1% !important;
 }
-.weather_card{
+.card{
   display: inline-block !important; 
   text-wrap: wrap;
   margin: 1%; 
