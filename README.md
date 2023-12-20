@@ -20,4 +20,14 @@ H3 for temperature
 Append elements onto main div
 Adding it to HTML after div is loaded with info
 
+HTML
+H1 weather dashboard
+H2 search for city
+onclick get weather forecast
+other buttons will load only when user searches
+Div id=weather info
+city name, date , temperature , wind , humidity.
+
+CSS
+
 

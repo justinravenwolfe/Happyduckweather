@@ -14,7 +14,7 @@ function removeAllChildren(element) {
       element.removeChild(element.firstChild);
   }
 }
-
+//This allows the button toggle
 function getForecastButton(button) {
   var city = button.innerText; 
   console.log(city);
@@ -34,6 +34,34 @@ function getForecastButton(button) {
         //Keyword this is just going to hold the specific word that on the button
         //The button will have the name of the city they searched for
         var weather_list = data.list; 
+        //The div that will hold all the elements
+        var curr_day = document.getElementById("curr_day");
+        //Empty 
+        var curr_day = document.getElementById("curr_day");
+        //Empty 
+        curr_day.innerHTML = ""; 
+        //Fill in the current day info
+        var header = document.createElement('h2');
+        //Name of the city and the date
+        var curr_date = Date(weather_list[0].dt_txt)
+        var text = city + " " + "( "+ curr_date.toString() + ")"; 
+        header.textContent = text; 
+        //The temperature element
+        var tmp = document.createElement('h3');
+        var temp_f = (weather_list[0].main.temp*9/5)+32; 
+        tmp.textContent = temp_f + "°F";
+        //The wind element
+        var wind = document.createElement('h3');
+        wind.textContent = weather_list[0].wind.speed + " m/s"; 
+        //The humidity element
+        var hum = document.createElement('h3');
+        hum.textContent = weather_list[0].main.humidity + "%"; 
+
+        curr_day.appendChild(header);
+        curr_day.appendChild(tmp);
+        curr_day.appendChild(wind);
+        curr_day.appendChild(hum);
+
         //Start at position 1 <- i = 0
         //Go all the way to the end of the list -> .length
         //Move in steps of 8 
@@ -58,7 +86,7 @@ function getForecastButton(button) {
           }
         }
         */
-        var temp = curr_day.main.temp;
+        var temp = curr_day.main.temp - 273.15; ;
         var weather = curr_day.weather[0].main; 
         //Outer counter for the card
         var card_container = document.createElement('div'); 
@@ -74,7 +102,7 @@ function getForecastButton(button) {
         //H3 for the Temperature
         var degrees= document.createElement('h5');
         degrees.id = "curr_temp";
-        degrees.textContent = temp + "°C"; 
+        degrees.textContent = temp + "°F"; 
         //paragraph for the weather description 
         var desc = document.createElement('h4'); 
         desc.id = "weather_desc";
@@ -129,6 +157,33 @@ function getWeatherForecast() {
         new_btn.setAttribute('onclick', 'getForecastButton(this)');   
         document.getElementById("city_opts").appendChild(new_btn);
         var weather_list = data.list; 
+
+        var curr_day = document.getElementById("curr_day");
+        //Empty 
+        var curr_day = document.getElementById("curr_day");
+        //Empty 
+        curr_day.innerHTML = ""; 
+        //Fill in the current day info
+        var header = document.createElement('h2');
+        //Name of the city and the date
+        var curr_date = Date(weather_list[0].dt_txt)
+        var text = city + " " + "( "+ curr_date.toString() + ")"; 
+        header.textContent = text; 
+        //The temperature element
+        var tmp = document.createElement('h3');
+        var temp_f = (weather_list[0].main.temp*9/5)+32; 
+        tmp.textContent = temp_f + "°F";
+        //The wind element
+        var wind = document.createElement('h3');
+        wind.textContent = weather_list[0].wind.speed + " m/s"; 
+        //The humidity element
+        var hum = document.createElement('h3');
+        hum.textContent = weather_list[0].main.humidity + "%"; 
+
+        curr_day.appendChild(header);
+        curr_day.appendChild(tmp);
+        curr_day.appendChild(wind);
+        curr_day.appendChild(hum);
         //Start at position 1 <- i = 0
         //Go all the way to the end of the list -> .length
         //Move in steps of 8 
@@ -153,7 +208,7 @@ function getWeatherForecast() {
           }
         }
         */
-        var temp = curr_day.main.temp;
+        var temp = (curr_day.main.temp*9/5)+32; 
         var weather = curr_day.weather[0].main; 
         //Outer counter for the card
         var card_container = document.createElement('div'); 
@@ -169,7 +224,7 @@ function getWeatherForecast() {
         //H3 for the Temperature
         var degrees= document.createElement('h5');
         degrees.id = "curr_temp";
-        degrees.textContent = temp + "°C"; 
+        degrees.textContent = temp + "°F"; 
         //paragraph for the weather description 
         var desc = document.createElement('h4'); 
         desc.id = "weather_desc";

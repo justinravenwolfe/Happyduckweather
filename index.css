@@ -23,3 +23,7 @@
   width: 4vw !important;
   height: 5vh !important; 
 }
+#curr_day{
+  border: 1px solid black !important;
+  text-align: center !important;
+}
