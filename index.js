@@ -49,13 +49,13 @@ function getForecastButton(button) {
         //The temperature element
         var tmp = document.createElement('h3');
         var temp_f = (weather_list[0].main.temp*9/5)+32; 
-        tmp.textContent = temp_f + "°F";
+        tmp.textContent = "temp: "+ temp_f + "°F";
         //The wind element
         var wind = document.createElement('h3');
-        wind.textContent = weather_list[0].wind.speed + " m/s"; 
+        wind.textContent ="wind speed: "+ weather_list[0].wind.speed + " m/s"; 
         //The humidity element
         var hum = document.createElement('h3');
-        hum.textContent = weather_list[0].main.humidity + "%"; 
+        hum.textContent ="humidity: "+ weather_list[0].main.humidity + "%"; 
 
         curr_day.appendChild(header);
         curr_day.appendChild(tmp);
@@ -172,13 +172,13 @@ function getWeatherForecast() {
         //The temperature element
         var tmp = document.createElement('h3');
         var temp_f = (weather_list[0].main.temp*9/5)+32; 
-        tmp.textContent = temp_f + "°F";
+        tmp.textContent ="temp: "+ temp_f + "°F";
         //The wind element
         var wind = document.createElement('h3');
-        wind.textContent = weather_list[0].wind.speed + " m/s"; 
+        wind.textContent ="wind speed: "+ weather_list[0].wind.speed + " m/s"; 
         //The humidity element
         var hum = document.createElement('h3');
-        hum.textContent = weather_list[0].main.humidity + "%"; 
+        hum.textContent ="humidity: "+ weather_list[0].main.humidity + "%"; 
 
         curr_day.appendChild(header);
         curr_day.appendChild(tmp);
