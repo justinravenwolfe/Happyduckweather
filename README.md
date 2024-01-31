@@ -1,6 +1,6 @@
 # Happyduckweather
 https://justinravenwolfe.github.io/Happyduckweather/
-git@github.com:justinravenwolfe/Happyduckweather.git
+https://github.com/justinravenwolfe/Happyduckweather
 
 Javascript
 Open weather API key
